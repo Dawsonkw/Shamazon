@@ -1,11 +1,27 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../images/shamazonLogoEdit2.png'
 import Searchbar from './Searchbar';
+import ApiHandler from '../api/ApiHandler';
 
 function Header() {
+
+    const navigate = useNavigate();
+
+    function accountClick() {
+        navigate('/account')
+    }
+
+    function loginClick() {
+        navigate('/userAuth')
+    }
+
     return (
         <div>
-            
+            {/* API HANDLER CAN BE MOVED TO A BETTER PLACE WHEN WE GET THE SITE MORE ESTABLISHED */}
+            <ApiHandler />
+
+
             <div className='flex px-3 bg-kitsuneBlue3'>
                 
                 <div className='flex-col mb-2'>
@@ -18,13 +34,13 @@ function Header() {
                     
                     <div className='flex flex-row space-x-32 items-center px-5 mb-5'>
                         <div>
-                            <h2 className='hover:cursor-pointer'>Account Feature</h2>
+                            <h2 onClick={accountClick} className='hover:cursor-pointer'>Account Feature</h2>
                         </div>
                         <div>
                             <h2 className='hover:cursor-pointer'>Cart Feature</h2>
                         </div>
                         <div>
-                            <h2 className='hover:cursor-pointer'>User Login portal</h2>
+                            <h2 onClick={loginClick} className='hover:cursor-pointer'>User Login portal</h2>
                         </div>
                     </div>
                     <div className=''>
