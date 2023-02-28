@@ -4,6 +4,7 @@ import { BiShow } from 'react-icons/bi';
 import { getAuth, sendPasswordResetEmail, signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2';
+import logo from '../images/shamazonLogoEdit2.png'
 
 
 function NewAuth(props) {
@@ -72,8 +73,12 @@ function NewAuth(props) {
     }
 
     return (
-        <div className='mt-40 w-1/2 mx-auto'>
-            <div className='bg-gray-400 rounded-lg p-6 shadow-lg mx-5 pt-5 pb-20 font-robotoSlab'>
+        <div className='mt-40 w-1/2 mx-auto'>  
+            <div className='bg-kitsuneBlue3 rounded-lg p-6 shadow-lg mx-5 pt-5 pb-20 font-robotoSlab'>
+            <h1 className='text-center text-5xl font-bold'>Shamazon User Login</h1>
+            <p className='text-center'>"Bringing packages, to people. Wherever they may be"</p>
+            <img className='flex mx-auto' src={logo} alt="Logo of a blond man riding a delivery cart" />
+            
                 <form onSubmit={handleSubmit}  className='bg-gray-200 rounded-lg p-6' action="" autoComplete='off'>
                     <div className='mb-4'>
                         <label htmlFor="email">Email</label>

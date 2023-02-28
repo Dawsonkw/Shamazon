@@ -16,8 +16,12 @@ function Header() {
         navigate('/userAuth')
     }
 
+    function homeClick() {
+        navigate('/')
+    }
+
     return (
-        <div>
+        <div >
             {/* API HANDLER CAN BE MOVED TO A BETTER PLACE WHEN WE GET THE SITE MORE ESTABLISHED */}
             <ApiHandler />
 
@@ -33,6 +37,9 @@ function Header() {
                 <div className='flex flex-col justify-center mx-auto'>
                     
                     <div className='flex flex-row space-x-32 items-center px-5 mb-5'>
+                        <div onClick={homeClick} className='hover:cursor-pointer'>
+                            <h2>Home</h2>
+                        </div>
                         <div>
                             <h2 onClick={accountClick} className='hover:cursor-pointer'>Account Feature</h2>
                         </div>
