@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Electronics from '../pages/Electronics';
 import DataContext from '../context/DataContext';
+import { BsFillStarFill } from 'react-icons/bs';
 
 function ApiHandler(props) {
     const [electronicsData, setElectronicsData] = useState([]);
@@ -71,15 +71,10 @@ function ApiHandler(props) {
           setHomeDecoData(homeDeco);
           setAutomotiveData(automotive);
           
-          console.log(mappedData);
+          console.log(mappedData); // YOU CAN REMOVE THIS WHEN YOU'RE DONE ADDING IN ALL THE JSON DATA!
         })
         .catch(error => console.error(error));
-
     }, [])
-    
-    
-    
-
 
     return (
         <DataContext.Provider value={data}>
@@ -89,16 +84,3 @@ function ApiHandler(props) {
 }
 
 export default ApiHandler;
-
-// https://dummyjson.com/docs/products PROVIDES DUMMY JSON DATA FOR THE PRODUCTS
-
-
-// {products.map(product => (
-//     <div key={product.id}>{product.title}</div>
-// ))}
-
-// const clothingSubcategories = Object.keys(mapSubsToCategories).filter(key => mapSubsToCategories[key] === 'Clothing');
-//     const clothingData = products.filter(product => clothingSubcategories.includes(product.category));
-
-
-// {categories['Electronics'] && <Electronics electronicsData={categories['Electronics']} />}

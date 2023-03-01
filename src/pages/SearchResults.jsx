@@ -1,24 +1,32 @@
-import React, { useState, useContext } from 'react';
-import DataContext from '../context/DataContext';
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from '../components/Header';
-import ApiHandler from '../api/ApiHandler';
+import { SiGhostery } from 'react-icons/si'
 
+function SearchResults(props) {
+    const location = useLocation();
+    const searchResultsData = location.state?.searchResultsData || [];
 
-function Electronics(props) {
-
-    const electronicsData = useContext(DataContext).filter(
-        (item) => item.group === 'Electronics'
-      );
+    if (searchResultsData.length === 0) {
+        return (
+            <div>
+                <Header />
+                <div className='flex justify-center items-center pt-60 '>
+                    <SiGhostery className='text-7xl text-kitsuneBlue' />
+                    <h1 >There is nothing to see here...</h1>
+                </div>
+            </div>
+        )
+    }
 
 
     return (
-        <div >         
+        <div className='bg-gray-200'>
             <Header />
-            <div className='px-4 py-4 bg-gray-200 '>
-                <h1 className='text-center font-bold text-5xl py-6'>Electronics</h1>
-                <div className='grid grid-cols-3 gap-3 gap-x-6 my-3'>
-                    { electronicsData.map((product) => (
-                        <div key={product.id} >
+                <h1 className='text-center font-bold text-5xl py-6'>Search Results: </h1>
+                    <div className='grid grid-cols-2 gap-3 gap-x-6 my-3'>
+                        {searchResultsData.map((product) => (
+                            <div key={product.id} >
                             <div className='px-6 hover:bg-kitsuneBlue h-full pb-4'>
                                 <div className='pt-4 justify-between w-full inline-flex'>
                                     <h2 className='text-3xl pr-2'>{product.title}</h2>
@@ -33,11 +41,11 @@ function Electronics(props) {
                                 </div>
                             </div>
                         </div>
-                    ))}
-                </div>
-            </div>
+                        ))}
+                    </div>
+
         </div>
     );
 }
 
-export default Electronics;
+export default SearchResults;

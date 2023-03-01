@@ -14,6 +14,7 @@ import Automotive from './pages/Automotive';
 import Cart from './pages/Cart';
 import ApiHandler from './api/ApiHandler';
 import Accessories from './pages/Accessories';
+import SearchResults from './pages/SearchResults';
 
 
 
@@ -23,7 +24,7 @@ function App() {
 
   return (
     <Router>
-      <div className='font-robotoSlab'>
+      <div className='font-robotoSlab bg-gray-200 h-screen'>
         <Routes>
           <Route exact path='/' element={<Home />}/>      
           <Route path='/userAuth'  element={<NewAuth />}/>
@@ -39,6 +40,7 @@ function App() {
           <Route path='/homeDeco' element={<ApiHandler> <HomeDeco /> </ApiHandler>} />
           <Route path='/automotive' element={<ApiHandler> <Automotive /> </ApiHandler>} />
           <Route path='/cart' element={<Cart />}/>
+          <Route path='/searchResults' element={<SearchResults />}/>
         </Routes>
       </div>
     </Router>
@@ -54,7 +56,6 @@ export default App
 // TO DO: 
 //  1. set up product pages ie; styling 
 //  2. Add in additional JSON info to each product page
-//  4. Figure out sticky header
 //  5. Build out cart page
 //  6. figure out buy options
 //  7. Mobile Breakpoints

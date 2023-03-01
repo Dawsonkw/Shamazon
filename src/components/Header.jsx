@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '../images/shamazonLogoEdit2.png'
 import Searchbar from './Searchbar';
@@ -16,6 +16,7 @@ import Automotive from '../pages/Automotive';
 import Accessories from '../pages/Accessories';
 
 function Header() {
+    const [searchValue, setSearchValue] = useState('');
 
     const navigate = useNavigate();
 
@@ -42,6 +43,11 @@ function Header() {
     function cartClick() {
         navigate('/cart')
     }
+
+    const handleChange = (event) => {
+        setSearchValue(event.target.value);
+    };
+
 
 
     return (
@@ -75,7 +81,7 @@ function Header() {
                     </div>
                     <div className=''>
                         <div className=''>
-                            <Searchbar />
+                            <Searchbar searchValue={searchValue} handleChange={handleChange} />
                         </div>
                     </div>
                 </div>
@@ -83,60 +89,14 @@ function Header() {
 
             <div >
                 <nav>
-                    <ul className='flex flex-row justify-between px-3 py-4 bg-kitsuneBlue'>
+                    <ul className='flex flex-row justify-between px-3 py-6 bg-kitsuneBlue'>
                         {menuNavItems.map((item => (
                             <li key={item.path}>
-                                <a className='hover:border-kitsuneOrange2 hover:border py-2 px-3' href="#" onClick={() => handleNavClick(item.path)}>{item.label}</a>
+                                <a className='inline-block hover:border-kitsuneOrange2 hover:border hover:translate-y-0 hover:translate-x-0 py-1 px-3 mobile:text-xs sm:text-xs md:text-lg h-10 leading-10' href="#" onClick={() => handleNavClick(item.path)}>{item.label}</a>
                             </li>
                         )))}
                     </ul>
                 </nav>
-                
-                
-                
-                
-                {/* <div>
-                    <h2 className='hover:cursor-pointer'>
-                        Electronics
-                    </h2>
-                </div>
-                
-                <div>
-                    <h2 className='hover:cursor-pointer'>
-                        Clothing
-                    </h2>
-                </div>
-                
-                <div>
-                    <h2 className='hover:cursor-pointer'>
-                        Health and Beauty
-                    </h2>
-                </div>
-                
-                <div>
-                    <h2 className='hover:cursor-pointer'>
-                        Watches and Jewelery
-                    </h2>
-                </div>
-                
-                <div>
-                    <h2 className='hover:cursor-pointer'>
-                        Groceries
-                    </h2>
-                </div>
-                
-                <div>
-                    <h2 className='hover:cursor-pointer'>
-                        Home Decoration
-                    </h2>
-                </div>
-                
-                <div>
-                    <h2 className='hover:cursor-pointer'>
-                        Automotive
-                    </h2>
-                </div> */}
-
             </div>
         </div>
     );
