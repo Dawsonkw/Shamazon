@@ -77,7 +77,8 @@ module.exports = {
       'kitsuneOrange2' : '#f5b529',
       'kitsuneBlue2' : '#2f9edb',
       'kitsuneBlue3' : '#2a8fc5',
-      'shamazonGreen' : '#244b57'
+      'shamazonGreen' : '#244b57',
+      'shamazonOrange' : '#ec9b33'
     }, 
     screens: {
       'tablet': '640px', 

@@ -10,8 +10,8 @@ function Searchbar({searchValue, handleChange}) {
 
 
     return (
-        <div className='py-4 flex items-center bg-gray-400 px-5 rounded-lg'>
-            <BsSearch className=' mr-4 text-xl hover:cursor-pointer hover:text-kitsuneOrange2' onClick={search}/>
+        <div className='py-4 flex items-center bg-shamazonOrange px-5 rounded-lg'>
+            <BsSearch className=' mr-4 text-3xl hover:cursor-pointer hover:text-kitsuneBlue3' onClick={search}/>
             <input className=' border border-shamazonGreen px-4 py-2 w-full' type="text" placeholder='Search Shamazon...' value={searchValue} onChange={handleChange} onKeyDown={(e) => {if(e.key === 'Enter') search()}} />
         </div>
     );
