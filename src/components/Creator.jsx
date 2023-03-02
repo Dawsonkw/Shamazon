@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword, signOut } from 'firebase/auth';
 import { BiShow } from 'react-icons/bi'
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import logo from '../images/shamazonLogoEdit2.png'
 
 const current = new Date().toISOString().split("T")[0] //split method will split the string to divide the date from the included tine, [0] selects for the first element (zeroth indexed), we are after the date not the time so we split it to make it useful
 
@@ -68,11 +69,15 @@ function Creator() {
     }
 
     return (
-        <div className='mt-40 w-1/2 mx-auto'>
-            <div className='bg-gray-400 rounded-lg p-6 shadow-lg mx-5 pt-5 pb-20 font-robotoSlab'>
+        <div className=' pt-10 w-1/2 mx-auto'>
+            <div className='bg-kitsuneBlue3 rounded-lg p-6 shadow-lg mx-5 pt-5 pb-20 font-robotoSlab'>
+                <h1 className='text-center text-5xl font-bold'>Shamazon Account Creation</h1>
+                <p className='text-center'>"Bringing packages, to people. Wherever they may be"</p>
+                <img className='flex mx-auto' src={logo} alt="Logo of a blond man riding a delivery cart" />
+                <p className='text-center'>To create an account please input the following:</p>
                 <div className=' bg-gray-200 rounded-md max-w-md mx-auto font-robotoSlab'>
-                    <h1 className='text-xl text-center py-3'>Account Creation</h1>
-                    <p className='text-center'>To create an account please input the following:</p>
+                    {/* <h1 className='text-xl text-center py-3'>Account Creation</h1> */}
+                    
                     <div className=''>
                         <form action="" className='flex justify-center items-center' onSubmit={register} name='registration form'>
                             <div className=' max-w-sm flex flex-col'>

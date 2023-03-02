@@ -40,7 +40,7 @@ function App() {
           <Route path='/homeDeco' element={<ApiHandler> <HomeDeco /> </ApiHandler>} />
           <Route path='/automotive' element={<ApiHandler> <Automotive /> </ApiHandler>} />
           <Route path='/cart' element={<Cart />}/>
-          <Route path='/searchResults' element={<SearchResults />}/>
+          <Route path='/searchResults' element={<SearchResults  />}/>
         </Routes>
       </div>
     </Router>
@@ -54,12 +54,13 @@ export default App
 //  Basically just an Amazon clone, minus some features and plus some other ones.
 
 // TO DO: 
-//  1. set up product pages ie; styling 
-//  2. Add in additional JSON info to each product page
+//  1. Set up home page w/ carousels
+//  2. build out account page and figure out use
+//  2. set up star rating system
 //  5. Build out cart page
 //  6. figure out buy options
 //  7. Mobile Breakpoints
-//  8. color scheme  
+//  8. Mobile hamburger menus
 //
 //
 //

@@ -23,15 +23,20 @@ function Account(props) {
     return (
         <div>
             <Header />
-            <h2>Welcome</h2>
-            <p>This is the account page!</p>
-            <button 
-                className=' items-center my-5 p-5 bg-kitsuneBlue mx-auto rounded-lg' 
-                type='submit'
-                onClick={handleSubmit}
-                >
-                    Sign Out 
-            </button>
+            <div className='flex justify-center'>
+                <div className='flex-col'>
+                    <h2>Welcome</h2>
+                    <p>This is the account page!</p>
+                
+                    <button
+                        className=' items-center my-5 p-5 bg-kitsuneBlue mx-auto rounded-lg'
+                        type='submit'
+                        onClick={handleSubmit}
+                        >
+                            Sign Out
+                    </button>
+                </div>
+            </div>
         </div>
     );
 }

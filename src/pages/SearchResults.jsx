@@ -13,7 +13,7 @@ function SearchResults(props) {
                 <Header />
                 <div className='flex justify-center items-center pt-60 '>
                     <SiGhostery className='text-7xl text-kitsuneBlue' />
-                    <h1 >There is nothing to see here...</h1>
+                    <h1 className='text-2xl'>There is nothing to see here...</h1>
                 </div>
             </div>
         )
@@ -29,7 +29,7 @@ function SearchResults(props) {
                             <div key={product.id} >
                             <div className='px-6 hover:bg-kitsuneBlue h-full pb-4'>
                                 <div className='pt-4 justify-between w-full inline-flex'>
-                                    <h2 className='text-3xl pr-2'>{product.title}</h2>
+                                    <h2 className='text-3xl pr-2 pb-4'>{product.title}</h2>
                                     <p className='items-end'>{product.rating}</p>
                                 </div>
                                 <img src={product.thumbnail} alt="" className='mx-auto' />

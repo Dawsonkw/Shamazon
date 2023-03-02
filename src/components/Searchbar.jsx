@@ -29,7 +29,7 @@ function Searchbar({searchValue, handleChange}) {
     };
 
     return (
-        <div className='py-4 flex items-center bg-shamazonOrange px-5 rounded-lg'>
+        <div className='py-4 flex items-center bg-shamazonOrange px-5 rounded-md'>
             <BsSearch 
                 className=' mr-4 text-3xl hover:cursor-pointer hover:text-kitsuneBlue3' 
                 onClick={search}

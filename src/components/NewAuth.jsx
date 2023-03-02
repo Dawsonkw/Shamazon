@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import logo from '../images/shamazonLogoEdit2.png'
 
 
+
 function NewAuth(props) {
     const [showPassword, setShowPassword] = useState(false)
     const [loading, setLoading] = useState(false); 
@@ -72,8 +73,9 @@ function NewAuth(props) {
         })
     }
 
+
     return (
-        <div className='mt-40 w-1/2 mx-auto'>  
+        <div className='pt-10 w-1/2 h-screen mx-auto bg-gray-200'>  
             <div className='bg-kitsuneBlue3 rounded-lg p-6 shadow-lg mx-5 pt-5 pb-20 font-robotoSlab'>
             <h1 className='text-center text-5xl font-bold'>Shamazon User Login</h1>
             <p className='text-center'>"Bringing packages, to people. Wherever they may be"</p>

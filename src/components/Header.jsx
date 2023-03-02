@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import logo from '../images/shamazonLogoEdit2.png'
 import Searchbar from './Searchbar';
 import ApiHandler from '../api/ApiHandler';
@@ -17,8 +17,10 @@ import Accessories from '../pages/Accessories';
 
 function Header() {
     const [searchValue, setSearchValue] = useState('');
+    const addItemToCart = location.state?.addItemToCart || [];
 
     const navigate = useNavigate();
+    
 
     const topNavItems = [
         {label: 'Home', path: '/', component: <Home />},
@@ -41,7 +43,7 @@ function Header() {
     }
 
     function cartClick() {
-        navigate('/cart')
+        navigate('/cart');
     }
 
     const handleChange = (event) => {
@@ -52,9 +54,6 @@ function Header() {
 
     return (
         <div >
-            {/* API HANDLER CAN BE MOVED TO A BETTER PLACE WHEN WE GET THE SITE MORE ESTABLISHED */}
-            <ApiHandler />
-
             <div className='flex px-3 bg-kitsuneBlue3'>
                 
                 <div className='flex-col mb-2'>
@@ -70,7 +69,7 @@ function Header() {
                             <ul className='flex flex-row justify-between px-5 mb-5 w-full'>
                                 {topNavItems.map((item) => (
                                     <li key={item.path}>
-                                        <a className='hover:border-shamazonOrange hover:border py-2 px-3' href="#" onClick={() => handleNavClick(item.path)}>{item.label}</a>
+                                        <a className='hover:border-kitsuneOrange2 rounded-md hover:border py-2 px-3' href="#" onClick={() => handleNavClick(item.path)}>{item.label}</a>
                                     </li>
                                 ))}
                             </ul>
@@ -92,7 +91,7 @@ function Header() {
                     <ul className='flex flex-row justify-between px-3 py-6 bg-kitsuneBlue'>
                         {menuNavItems.map((item => (
                             <li key={item.path}>
-                                <a className='inline-block hover:border-kitsuneOrange2 hover:border hover:translate-y-0 hover:translate-x-0 py-1 px-3 mobile:text-xs sm:text-xs md:text-lg h-10 leading-10' href="#" onClick={() => handleNavClick(item.path)}>{item.label}</a>
+                                <a className='inline-block rounded-md bg-kitsuneOrange2 hover:border-shamazonGreen hover:border hover:translate-y-0 hover:translate-x-0 py-1 px-3 mobile:text-xs sm:text-xs md:text-lg h-10 leading-10' href="#" onClick={() => handleNavClick(item.path)}>{item.label}</a>
                             </li>
                         )))}
                     </ul>
