@@ -24,7 +24,7 @@ function App() {
 
   return (
     <Router>
-      <div className='font-robotoSlab bg-gray-200 h-screen'>
+      <div className='font-robotoSlab bg-gray-300 h-screen'>
         <Routes>
           <Route exact path='/' element={<Home />}/>      
           <Route path='/userAuth'  element={<NewAuth />}/>
@@ -44,7 +44,6 @@ function App() {
         </Routes>
       </div>
     </Router>
-    
   )
 }
 
@@ -57,8 +56,6 @@ export default App
 //  1. Set up home page w/ carousels
 //  2. build out account page and figure out use
 //  2. set up star rating system
-//  5. Build out cart page
-//  6. figure out buy options
 //  7. Mobile Breakpoints
 //  8. Mobile hamburger menus
 //
