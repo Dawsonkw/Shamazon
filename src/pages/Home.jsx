@@ -11,7 +11,7 @@ function Home(props) {
             <div >
                 <Header />
                 <Carousel />
-                <div className='items-center -mt-80 w-1/2  flex'>
+                <div className='items-center -mt-72 w-1/2  flex'>
                     <img className='' src={char3} alt="" />
                     <img className='' src={char4} alt="" />
                 </div>
