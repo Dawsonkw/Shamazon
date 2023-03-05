@@ -91,7 +91,7 @@ function Header() {
                     <ul className='flex flex-row justify-between px-3 py-6 bg-kitsuneBlue'>
                         {menuNavItems.map((item => (
                             <li key={item.path}>
-                                <a className='inline-block rounded-md bg-kitsuneOrange2 hover:border-shamazonGreen hover:border hover:translate-y-0 hover:translate-x-0 py-1 px-3 mobile:text-xs sm:text-xs md:text-lg h-10 leading-10' href="#" onClick={() => handleNavClick(item.path)}>{item.label}</a>
+                                <a className='inline-block rounded-md hover:border-kitsuneOrange2 hover:border hover:translate-y-0 hover:translate-x-0 py-1 px-3 mobile:text-xs sm:text-xs md:text-lg h-10 leading-10' href="#" onClick={() => handleNavClick(item.path)}>{item.label}</a>
                             </li>
                         )))}
                     </ul>
