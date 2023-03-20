@@ -11,9 +11,9 @@ function Home(props) {
             <div >
                 <Header />
                 <Carousel />
-                <div className='items-center -mt-72 w-1/2  flex'>
-                    <img className='' src={char3} alt="" />
-                    <img className='' src={char4} alt="" />
+                <div className='flex justify-center'>
+                    <img className='' src={char3} style={{width: '400px', }} alt="" />
+                    <img className='' src={char4} style={{width: '400px', }} alt="" />
                 </div>
             </div>
         </div>

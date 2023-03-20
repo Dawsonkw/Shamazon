@@ -5,6 +5,7 @@ import { BiShow } from 'react-icons/bi'
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import logo from '../images/shamazonLogoEdit2.png'
+import Header from './Header';
 
 const current = new Date().toISOString().split("T")[0] //split method will split the string to divide the date from the included tine, [0] selects for the first element (zeroth indexed), we are after the date not the time so we split it to make it useful
 
@@ -69,91 +70,94 @@ function Creator() {
     }
 
     return (
-        <div className=' pt-10 w-1/2 mx-auto'>
-            <div className='bg-kitsuneBlue3 rounded-lg p-6 shadow-lg mx-5 pt-5 pb-20 font-robotoSlab'>
-                <h1 className='text-center text-5xl font-bold'>Shamazon Account Creation</h1>
-                <p className='text-center'>"Bringing packages, to people. Wherever they may be"</p>
-                <img className='flex mx-auto' src={logo} alt="Logo of a blond man riding a delivery cart" />
-                <p className='text-center'>To create an account please input the following:</p>
-                <div className=' bg-gray-200 rounded-md max-w-md mx-auto font-robotoSlab'>
-                    {/* <h1 className='text-xl text-center py-3'>Account Creation</h1> */}
-                    
-                    <div className=''>
-                        <form action="" className='flex justify-center items-center' onSubmit={register} name='registration form'>
-                            <div className=' max-w-sm flex flex-col'>
-                                <div className='py-8 '>
-                                    <label className='pr-4 '>
-                                        Email*
-                                    </label>
-                                    <input
-                                        type="email"
-                                        required
-                                        name="email"
-                                        className='w-full rounded-md p-2 border border-kitsuneBlue'
-                                        value={email}
-                                        onChange={event => setEmail(event.target.value)}
-                                    />
+        <div className='bg-gray-300'> 
+            <Header />
+            <div className=' pt-10 w-1/3 mx-auto'>
+                <div className='bg-kitsuneBlue3 rounded-lg p-6 shadow-lg mx-5 pt-5 pb-5 font-robotoSlab'>
+                    <h1 className='text-center text-5xl font-bold'>Shamazon Account Creation</h1>
+                    <p className='text-center'>"Bringing packages, to people. Wherever they may be"</p>
+                    <img className='flex mx-auto' src={logo} alt="Logo of a blond man riding a delivery cart" />
+                    <p className='text-center'>To create an account please input the following:</p>
+                    <div className=' bg-gray-200 rounded-md max-w-md mx-auto font-robotoSlab'>
+                        {/* <h1 className='text-xl text-center py-3'>Account Creation</h1> */}
             
-                                </div>
-                                    <div className='py-8'>
-                                        <label className='pr-4'>
-                                            Password*
+                        <div className=''>
+                            <form action="" className='flex justify-center items-center' onSubmit={register} name='registration form'>
+                                <div className=' max-w-sm flex flex-col'>
+                                    <div className='py-8 '>
+                                        <label className='pr-4 '>
+                                            Email*
                                         </label>
-                                        <div className='flex-row w-full relative'>
-                                            <input
-                                                type={showPassword ? 'text' : 'password'}
-                                                name="password"
-                                                className='w-full rounded-md p-2 border border-kitsuneBlue'
-                                                value={password}
-                                                required
-                                                onChange={event => setPassword(event.target.value)}
-                                            />
+                                        <input
+                                            type="email"
+                                            required
+                                            name="email"
+                                            className='w-full rounded-md p-2 border border-kitsuneBlue'
+                                            value={email}
+                                            onChange={event => setEmail(event.target.value)}
+                                        />
             
-                                            <div>
-                                                <div className='absolute right-3 top-3 cursor-pointer hover:text-kitsuneBlue2 text-xl'
-                                                    onClick={() => setShowPassword(!showPassword)}>
-                                                    <BiShow />
+                                    </div>
+                                        <div className='py-8'>
+                                            <label className='pr-4'>
+                                                Password*
+                                            </label>
+                                            <div className='flex-row w-full relative'>
+                                                <input
+                                                    type={showPassword ? 'text' : 'password'}
+                                                    name="password"
+                                                    className='w-full rounded-md p-2 border border-kitsuneBlue'
+                                                    value={password}
+                                                    required
+                                                    onChange={event => setPassword(event.target.value)}
+                                                />
+            
+                                                <div>
+                                                    <div className='absolute right-3 top-3 cursor-pointer hover:text-kitsuneBlue2 text-xl'
+                                                        onClick={() => setShowPassword(!showPassword)}>
+                                                        <BiShow />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className='py-8'>
-                                        <label className='pr-4'>
-                                            Confirm Password*
-                                        </label>
-                                        <div className='flex-row w-full relative'>
+                                        <div className='py-8'>
+                                            <label className='pr-4'>
+                                                Confirm Password*
+                                            </label>
+                                            <div className='flex-row w-full relative'>
+                                                <input
+                                                    type={showPassword ? 'text' : 'password'}
+                                                    name="confirmPassword"
+                                                    className='w-full rounded-md p-2 border border-kitsuneBlue'
+                                                    value={confirmPassword}
+                                                    required
+                                                    onChange={event => setConfirmPassword(event.target.value)}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className='py-8'>
+                                            <label className='pr-4'>
+                                                Date of Birth*
+                                            </label>
                                             <input
-                                                type={showPassword ? 'text' : 'password'}
-                                                name="confirmPassword"
+                                                type="date"
+                                                name="birthdate"
+                                                max={current}
                                                 className='w-full rounded-md p-2 border border-kitsuneBlue'
-                                                value={confirmPassword}
                                                 required
-                                                onChange={event => setConfirmPassword(event.target.value)}
+                                                value={date}
+                                                onChange={event => setDate(event.target.value)}
                                             />
                                         </div>
+                                    <div className='flex justify-center'>
+                                        <button type='submit'  className='bg-kitsuneBlue p-5 rounded-lg mb-3 hover:bg-kitsuneBlue3'>
+                                            Create Account
+                                        </button>
                                     </div>
-                                    <div className='py-8'>
-                                        <label className='pr-4'>
-                                            Date of Birth*
-                                        </label>
-                                        <input
-                                            type="date"
-                                            name="birthdate"
-                                            max={current}
-                                            className='w-full rounded-md p-2 border border-kitsuneBlue'
-                                            required
-                                            value={date}
-                                            onChange={event => setDate(event.target.value)}
-                                        />
-                                    </div>
-                                <div className='flex justify-center'>
-                                    <button type='submit'  className='bg-kitsuneBlue p-5 rounded-lg mb-3 hover:bg-kitsuneBlue3'>
-                                        Create Account
-                                    </button>
                                 </div>
-                            </div>
-                        </form>
-                        {error && <p className="text-center text-red-600 py-4 px-6 text-md">{error}</p>}
+                            </form>
+                            {error && <p className="text-center text-red-600 py-4 px-6 text-md">{error}</p>}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -37,7 +37,7 @@ function Account(props) {
                         </button>
                     </div>
                     <p className='text-xl text-center font-bold px-5'>You can add items to your cart by navigating to the page or searching for a product and clicking on add to cart.</p>
-                    <img src={char2} alt="" className='items-center justify-center mx-auto -mt-14'/>
+                    <img src={char2} alt="" className='items-center justify-center mx-auto -mt-14' style={{width: '700px'}}/>
                 
                     
                 </div>

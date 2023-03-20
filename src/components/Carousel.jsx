@@ -37,8 +37,8 @@ function Carousel(props) {
                     <Slider {...settings} >
                     {products.map((item, index) => (
                         <div key={index}>
-                            <h3 className='text-center text-2xl'>{item.title}</h3>
-                            <img className='object-center mx-auto my-5 px-2 max-h-200' src={item.images[2] ? item.images[2] : item.images[0]  } alt={item.title} />
+                            <h1 className='text-center text-xl'>{item.title} </h1>
+                            <img className='object-center mx-auto my-5 px-2 max-h-200' src={item.images[2] ? item.images[2] : item.images[0]  } alt={item.title} style={{width: '200px', height: '200px' }} />
                             <p className='text-center text-lg'>Price: {item.price.toLocaleString("en-US", {style: "currency", currency: "USD"})}</p>
                         </div>
                     ))}
